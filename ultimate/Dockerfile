@@ -25,6 +25,7 @@ RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
 RUN apt-get install -y unixodbc-dev
 RUN pip install pyodbc==4.0.30
 
+#---------------------------------------------------------------------------------------------
 #Install JRE
 RUN apt-get update && apt-get install -y default-jre
 
