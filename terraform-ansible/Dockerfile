@@ -9,6 +9,7 @@ USER root
 # Install ANSIBLE
 RUN pip install ansible-kernel
 RUN python -m ansible_kernel.install
+RUN apt-get update
 RUN apt-get install -y sshpass
 
 # HashiCorp Vault API client
