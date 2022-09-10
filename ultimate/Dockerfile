@@ -38,6 +38,7 @@ RUN apt-get install -y sshpass
 # HashiCorp Vault Python API client
 RUN pip install hvac
 
+#---------------------------------------------------------------------------------------------
 # Install Terraform
 
 RUN apt-get update && sudo apt-get install -y gnupg software-properties-common
