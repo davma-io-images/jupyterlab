@@ -76,6 +76,6 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN unzip awscliv2.zip
 RUN  ./aws/install
 
+#---------------------------------------------------------------------------------------------
 # Install Napptive CLI
-
 RUN curl -O https://storage.googleapis.com/artifacts.playground.napptive.dev/installer.sh && bash installer.sh
