@@ -41,8 +41,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: "{{defaultContext}}:ultimate"
-          file: Dockerfile
+          context: .
+          file: ./ultimate/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/jupyter-ultimate:${{ matrix.tag }}
           build-args: |
