@@ -1,10 +1,10 @@
-name: Build and push images
+name: Build jupyter-tensorflow-pyodbc
 on:
   push:
     branches:
       - 'main'
     paths:
-      - "ultimate/**"
+      - "tensorflow-pyodbc/**"
       - "!README.md"
       - "!build.rb"
   schedule:
@@ -42,8 +42,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: ./ultimate/Dockerfile
+          file: ./tensorflow-pyodbc/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/jupyter-ultimate:${{ matrix.tag }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/jupyter-tensorflow-pyodbc:${{ matrix.tag }}
           build-args: |
             IMAGE=${{ matrix.base }}
