@@ -29,6 +29,7 @@ RUN pip install pyodbc==4.0.30
 #Install JRE
 RUN apt-get update && apt-get install -y default-jre
 
+#---------------------------------------------------------------------------------------------
 # Install ANSIBLE
 RUN pip install ansible-kernel
 RUN python -m ansible_kernel.install
