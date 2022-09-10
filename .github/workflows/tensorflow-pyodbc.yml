@@ -7,8 +7,6 @@ on:
       - "*"
       - "!README.md"
       - "!build.rb"
-      - "!terraform-ansible/**"
-      - "!ultimate/**"
   schedule:
     - cron: "0 0 * * 0-6"
 jobs:
