@@ -59,7 +59,8 @@ RUN echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
 RUN apt update
 RUN apt-get install terraform
 
-# Install kubectl on Linux
+#---------------------------------------------------------------------------------------------
+# Install kubectl tools
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
