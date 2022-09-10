@@ -40,7 +40,6 @@ RUN pip install hvac
 
 #---------------------------------------------------------------------------------------------
 # Install Terraform
-
 RUN apt-get update && sudo apt-get install -y gnupg software-properties-common
 
 RUN wget -O- https://apt.releases.hashicorp.com/gpg | \
@@ -61,7 +60,6 @@ RUN apt-get install terraform
 
 #---------------------------------------------------------------------------------------------
 # Install kubectl tools
-
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 RUN curl -LO "https://dl.k8s.io/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
 RUN echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
@@ -69,11 +67,10 @@ RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 #---------------------------------------------------------------------------------------------
 # Install Azure CLI
-
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
+#---------------------------------------------------------------------------------------------
 # Install AWS CLI
-
 RUN apt install -y groff
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
