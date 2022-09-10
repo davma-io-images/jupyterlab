@@ -1,4 +1,4 @@
-name: Build jupyter-ultimate
+name: Build and push images
 on:
   push:
     branches:
