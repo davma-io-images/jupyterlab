@@ -4,6 +4,7 @@ ARG NB_UID="100"
 FROM ${IMAGE} as parent
 
 USER root
+
 # Install ANSIBLE
 RUN pip install ansible-kernel
 RUN python -m ansible_kernel.install
@@ -13,13 +14,11 @@ RUN apt-get install -y sshpass
 RUN pip install hvac
 
 # Install Terraform
-
 RUN apt-get update && sudo apt-get install -y gnupg software-properties-common
 
 RUN wget -O- https://apt.releases.hashicorp.com/gpg | \
     gpg --dearmor | \
     tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
-
 
 RUN gpg --no-default-keyring \
     --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg \
