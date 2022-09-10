@@ -4,6 +4,8 @@ FROM ${IMAGE} as parent
 
 USER root
 
+#---------------------------------------------------------------------------------------------
+# Install msodbcsql17 - pyodbc
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install gnupg2 -y
 RUN apt-get install curl -y
