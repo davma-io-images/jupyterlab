@@ -3,6 +3,7 @@ ARG IMAGE
 FROM ${IMAGE} as parent
 
 USER root
+WORKDIR /
 
 #---------------------------------------------------------------------------------------------
 # Install msodbcsql17 - pyodbc

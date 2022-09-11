@@ -4,6 +4,7 @@ ARG NB_UID="100"
 FROM ${IMAGE} as parent
 
 USER root
+WORKDIR /
 
 #---------------------------------------------------------------------------------------------
 # Install ANSIBLE
