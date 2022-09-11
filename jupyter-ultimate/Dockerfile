@@ -4,6 +4,7 @@ ARG NB_UID="100"
 FROM ${IMAGE} as parent
 
 USER root
+WORKDIR /
 
 #---------------------------------------------------------------------------------------------
 # Install msodbcsql17 - pyodbc
@@ -78,6 +79,5 @@ RUN  ./aws/install
 # Install Napptive CLI
 RUN curl -O https://storage.googleapis.com/artifacts.playground.napptive.dev/installer.sh && bash installer.sh
 
-WORKDIR /home/jovyan
 USER jovyan
-RUN mkdir projects
+WORKDIR /home/jovyan

@@ -50,7 +50,7 @@ services:
     image: davma/jupyter-ultimate:latest
     pull_policy: always
     volumes:
-      - "./:/home/jovyan/projects"
+      - "./:/home/jovyan"
     ports:
      - "8888:8888"
     restart: always
