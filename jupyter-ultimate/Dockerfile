@@ -12,7 +12,6 @@ RUN apt-get install gnupg2 -y
 RUN apt-get install curl -y
 
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-    #Ubuntu 21.04 / no supported Ubuntu 22.04
 RUN curl https://packages.microsoft.com/config/ubuntu/21.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
 RUN apt-get update
 
@@ -34,7 +33,6 @@ RUN apt-get update && apt-get install -y default-jre
 RUN pip install ansible-kernel
 RUN python -m ansible_kernel.install
 RUN apt-get install -y sshpass
-
 # HashiCorp Vault Python API client
 RUN pip install hvac
 

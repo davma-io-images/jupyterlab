@@ -13,9 +13,9 @@ The following components have been added:
 
 | CLI Components | Infrastructure Components | Python Components |
 |---| ---| ---|
-| Azure CLI | Terraform | TensorFlow |
+| Azure CLI | Terraform | Vault API client |
 | AWS CLI | Ansible | Pyodbc |
-| Napptive CLI | kubectl | Vault API client |
+| Napptive CLI | kubectl |  |
 
 ## 2. Requirements
 
