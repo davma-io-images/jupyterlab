@@ -5,7 +5,7 @@ on:
       - 'main'
     paths:
       - "jupyter-ultimate/**"
-      - "!README.md"
+      - "!jupyter-ultimate/README.md"
       - "!build.rb"
   schedule:
     - cron: "0 0 * * 0-6"

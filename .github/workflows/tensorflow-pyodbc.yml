@@ -5,7 +5,7 @@ on:
       - 'main'
     paths:
       - "tensorflow-pyodbc/**"
-      - "!README.md"
+      - "!tensorflow-pyodbc/README.md"
       - "!build.rb"
   schedule:
     - cron: "0 0 * * 0-6"
