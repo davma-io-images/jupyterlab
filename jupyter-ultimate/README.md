@@ -1,61 +1,70 @@
-## Jupyter-Ansible image with TensorFlow and pyodbc == 4.0.30
+# Jupyter-Ultimate
 
 </br>
 
-[![Build and push images](https://github.com/davma-io-images/jupyter-ansible/actions/workflows/docker-image.yml/badge.svg)](https://github.com/davma-io-images/jupyter-ansible/actions/workflows/docker-image.yml)
-[![Docker Pulls](https://img.shields.io/docker/pulls/davma/jupyter-ansible-tf?logo=docker&logoColor=white)](https://hub.docker.com/repository/docker/davma/jupyter-tensorflow-pyodbc) 
+[![Build jupyter-ultimate](https://github.com/davma-io-images/jupyterlab/actions/workflows/jupyter-ultimate.yml/badge.svg)](https://github.com/davma-io-images/jupyterlab/actions/workflows/jupyter-ultimate.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/davma/jupyter-ultimate?logo=docker&logoColor=white)](https://hub.docker.com/r/davma/jupyter-ultimate)
 
-## 1. Requirements
+## 1. Features
+
+This image is a modification of the official [Jupyter Notebook Deep Learning Stack](https://hub.docker.com/r/jupyter/tensorflow-notebook) image. 
+
+The following components have been added:
+
+| CLI Components | Infrastructure Components | Python Components |
+|---| ---| ---|
+| Azure CLI | Terraform | TensorFlow |
+| AWS CLI | Ansible | Pyodbc |
+| Napptive CLI | kubectl | Vault API client |
+
+## 2. Requirements
 
 1. [Docker](https://docs.docker.com/get-docker/)
 
-## 2. Docker pull
+## 3. Docker pull
 
-You can download the full image from [Docker Hub](https://hub.docker.com/) with the following command.
-
-Jupyter-TensorFlow latest [official image](https://hub.docker.com/r/jupyter/tensorflow-notebook/tags?page=1&name=python) with Ansible and pyodbc == 4.0.30
+You can download image from [Docker Hub](https://hub.docker.com/r/davma/jupyter-ultimate) with the following command.
 
 ````
-docker pull davma/jupyter-ansible-tf:latest
+docker pull davma/jupyter-ultimate:latest
 ````
 
-Jupyter-TensorFlow python:3.10 [official image](https://hub.docker.com/r/jupyter/tensorflow-notebook/tags?page=1&name=python) with Ansible and pyodbc == 4.0.30
-````
-docker pull davma/jupyter-ansible-tf:3.10
-````
-Jupyter-TensorFlow python:3.9 [official image](https://hub.docker.com/r/jupyter/tensorflow-notebook/tags?page=1&name=python) with Ansible and pyodbc == 4.0.30
-````
-docker pull davma/jupyter-ansible-tf:3.9
-````
-Jupyter-TensorFlow python:3.8 [official image](https://hub.docker.com/r/jupyter/tensorflow-notebook/tags?page=1&name=python) with Ansible and pyodbc == 4.0.30
-````
-docker pull davma/jupyter-ansible-tf:3.8
-````
+## 4. Supported tags
 
-## 3. Access to Jupyter
+Tags have been assigned based on the version of python installed.
+
+- latest, 3.10 
+- 3.9 
+- 3.8
+
+Can find the dockerfile in the following [link](https://github.com/davma-io-images/jupyterlab/blob/main/jupyter-ultimate/Dockerfile)
+
+## 5. Access to Jupyter-Ultimate
 
 Visiting ``http://<hostname>:8888/?token=<token>`` in a browser loads JupyterLab, where:
 
-- hostname is the name of the computer running Docker
-- token is the secret token printed in the console.
+- Hostname is the name of the computer running Docker.
+- Token is the secret token printed in the console.
 
-## 4. Image build
+## 6. Image build
 
 You can run the image build with the following commands
 
 ````
-git clone https://github.com/davma-io-images/jupyter-ansible.git
-cd jupyter-ansible
-docker build -t jupyter-ansible .
+git clone https://github.com/davma-io-images/jupyterlab.git
+cd jupyterlab/jupyter-ultimate/
+docker build -t jupyter-ultimate .
 ````
 
-## 5.Documentation and guides
-
-[Jupiter Ansible](https://github.com/ansible/ansible-jupyter-kernel)
+## 7.Documentation and guides
 
 [Jupyter Notebook](https://jupyter.org/)
 
+[Jupiter Ansible](https://github.com/ansible/ansible-jupyter-kernel)
+
 [Ansible](https://docs.ansible.com/)
+
+[Terraform](https://www.terraform.io/intro)
 
 [TensorFlow](https://www.tensorflow.org/)
 
