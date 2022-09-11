@@ -77,3 +77,7 @@ RUN  ./aws/install
 #---------------------------------------------------------------------------------------------
 # Install Napptive CLI
 RUN curl -O https://storage.googleapis.com/artifacts.playground.napptive.dev/installer.sh && bash installer.sh
+
+WORKDIR /home/jovyan
+USER jovyan
+RUN mkdir projects

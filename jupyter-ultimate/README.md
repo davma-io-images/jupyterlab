@@ -39,14 +39,31 @@ Tags have been assigned based on the version of python installed.
 
 Can find the dockerfile in the following [link](https://github.com/davma-io-images/jupyterlab/blob/main/jupyter-ultimate/Dockerfile)
 
-## 5. Access to Jupyter-Ultimate
+## 5. Deploy with Docker Compose
+
+Use docker compose for persistent data in your local directory. You will have access from Jupyter to the directory from which you deploy this docker compose.
+
+````
+services:
+  jupyter-ultimate:
+    container_name: jupyter-ultimate
+    image: davma/jupyter-ultimate:latest
+    pull_policy: always
+    volumes:
+      - "./:/home/jovyan/projects"
+    ports:
+     - "8888:8888"
+    restart: always
+````
+
+## 6. Access to Jupyter-Ultimate
 
 Visiting ``http://<hostname>:8888/?token=<token>`` in a browser loads JupyterLab, where:
 
 - Hostname is the name of the computer running Docker.
 - Token is the secret token printed in the console.
 
-## 6. Image build
+## 7. Image build
 
 You can run the image build with the following commands
 
@@ -56,7 +73,7 @@ cd jupyterlab/jupyter-ultimate/
 docker build -t jupyter-ultimate .
 ````
 
-## 7.Documentation and guides
+## 8.Documentation and guides
 
 [Jupyter Notebook](https://jupyter.org/)
 
