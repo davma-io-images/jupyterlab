@@ -2,7 +2,7 @@
 
 </br>
 
-[![Build and push images](https://github.com/davma-io-images/jupyter-tensorflow-pyodbc/actions/workflows/docker-image.yml/badge.svg)](https://github.com/davma-io-images/jupyter-tensorflow-pyodbc/actions/workflows/docker-image.yml)
+[![Build jupyter-tensorflow-pyodbc](https://github.com/davma-io-images/jupyterlab/actions/workflows/tensorflow-pyodbc.yml/badge.svg)](https://github.com/davma-io-images/jupyterlab/actions/workflows/tensorflow-pyodbc.yml)
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/davma/jupyter-tensorflow-pyodbc?logo=docker&logoColor=white)](https://hub.docker.com/r/davma/jupyter-tensorflow-pyodbc)  
 
