@@ -1,4 +1,4 @@
-## Jupyter-TensorFlow image with pyodbc == 4.0.30
+## Jupyter-TensorFlow image with pyodbc == 4.0.34
 
 </br>
 
