@@ -7,7 +7,7 @@ USER root
 WORKDIR /
 
 #---------------------------------------------------------------------------------------------
-# Install msodbcsql17 - pyodbc
+# Install msodbcsql18 - pyodbc
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install gnupg2 -y
 RUN apt-get install curl -y
@@ -37,7 +37,6 @@ RUN apt-get install -y sshpass
 # HashiCorp Vault Python API client
 RUN pip install hvac
 
-#---------------------------------------------------------------------------------------------
 # Install Terraform
 RUN apt-get update && sudo apt-get install -y gnupg software-properties-common
 
@@ -68,16 +67,24 @@ RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # Install Azure CLI
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
-#---------------------------------------------------------------------------------------------
 # Install AWS CLI
 RUN apt install -y groff
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN  ./aws/install
 
-#---------------------------------------------------------------------------------------------
 # Install Napptive CLI
 RUN curl -O https://storage.googleapis.com/artifacts.playground.napptive.dev/installer.sh && bash installer.sh
+
+#---------------------------------------------------------------------------------------------
+# Install python modules
+RUN apt-get update
+# RUN apt-get install build-essential portaudio19-dev python3.10-dev -y
+RUN apt-get install build-essential portaudio19-dev -y
+
+ADD docker-images/jupyter-test/requirements.txt requirements.txt
+#--Edit requirements.txt to add or update python modules--
+RUN pip install -r requirements.txt
 
 USER jovyan
 WORKDIR /home/jovyan
