@@ -82,7 +82,7 @@ RUN apt-get update
 # RUN apt-get install build-essential portaudio19-dev python3.10-dev -y
 RUN apt-get install build-essential portaudio19-dev -y
 
-ADD docker-images/jupyter-test/requirements.txt requirements.txt
+ADD requirements.txt requirements.txt
 #--Edit requirements.txt to add or update python modules--
 RUN pip install -r requirements.txt
 
